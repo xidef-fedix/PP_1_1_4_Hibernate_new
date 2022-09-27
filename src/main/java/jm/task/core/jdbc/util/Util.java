@@ -18,9 +18,10 @@ public class Util {
             .addAnnotatedClass(User.class)
             .buildSessionFactory();
 
-    public Session getSession () {
+    public Session getSession() {
         return factory.getCurrentSession();
     }
+
     public Connection getConnect() {
         try {
             return connect = DriverManager.getConnection(URL, USERNAME, PASSWORD);
@@ -28,6 +29,7 @@ public class Util {
             throw new RuntimeException(e);
         }
     }
+
     public void connectToBase() {
         getConnect();
     }
