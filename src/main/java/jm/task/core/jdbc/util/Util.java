@@ -14,12 +14,27 @@ public class Util {
     private final String PASSWORD = "89888988";
     private final String URL = "jdbc:mysql://localhost:3306/users";
     private Connection connect;
-    private SessionFactory factory = new Configuration()
-            .addAnnotatedClass(User.class)
-            .buildSessionFactory();
+    private static Util util;
 
-    public Session getSession() {
-        return factory.getCurrentSession();
+    private Util() {
+    }
+
+    public static Util getUtil() {
+        if (util == null) {
+            util = new Util();
+        }
+        return util;
+    }
+
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() {
+        if (sessionFactory == null) {
+            sessionFactory = new Configuration()
+                    .addAnnotatedClass(User.class)
+                    .buildSessionFactory();
+        }
+        return sessionFactory;
     }
 
     public Connection getConnect() {
@@ -29,11 +44,6 @@ public class Util {
             throw new RuntimeException(e);
         }
     }
-
-    public void connectToBase() {
-        getConnect();
-    }
-
 
 }
 
