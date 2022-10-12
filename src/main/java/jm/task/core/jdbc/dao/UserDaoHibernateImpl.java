@@ -32,7 +32,14 @@ public class UserDaoHibernateImpl implements UserDao {
             }
             e.printStackTrace();
         } finally {
-            session.close();
+            try {
+                if (session != null) {
+                    session.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -49,7 +56,14 @@ public class UserDaoHibernateImpl implements UserDao {
             }
             e.printStackTrace();
         } finally {
-            session.close();
+            try {
+                if (session != null) {
+                    session.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
 
     }
@@ -68,7 +82,14 @@ public class UserDaoHibernateImpl implements UserDao {
             }
             e.printStackTrace();
         } finally {
-            session.close();
+            try {
+                if (session != null) {
+                    session.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
 
     }
@@ -88,7 +109,14 @@ public class UserDaoHibernateImpl implements UserDao {
             }
             e.printStackTrace();
         } finally {
-            session.close();
+            try {
+                if (session != null) {
+                    session.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -106,7 +134,14 @@ public class UserDaoHibernateImpl implements UserDao {
             }
             e.printStackTrace();
         } finally {
-            session.close();
+            try {
+                if (session != null) {
+                    session.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
         return userList;
     }
@@ -124,7 +159,14 @@ public class UserDaoHibernateImpl implements UserDao {
             }
             e.printStackTrace();
         } finally {
-            session.close();
+            try {
+                if (session != null) {
+                    session.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
 
     }
